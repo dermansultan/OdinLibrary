@@ -7,6 +7,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
+<container>
+    <form>
+        <label for="bookName">Book Name:</label><br>
+        <input type="text" id="bookName" name="bookName"><br>
+        <label for="bookAuthor">Author</label><br>
+        <input type="text" id="bookAuthor" name="bookAuthor"><br>
+        <label for="bookPages">Pages:</label><br>
+        <input type="number" name="bookPages"><br>
+        <input type="checkbox" id="readStatus" name="readStatus">
+        <label for="readStatus">I have read this book</label>
+    </form>
+    <ul id="bookListContain"></ul>
+</container>    
 </body>
+<script src="app.js"></script>
 </html>
