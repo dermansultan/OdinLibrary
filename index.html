@@ -8,16 +8,17 @@
 </head>
 <body>
 <container>
-    <form>
+    <form class="bookForm" id="bookForm">
         <label for="bookName">Book Name:</label><br>
         <input type="text" id="bookName" name="bookName"><br>
         <label for="bookAuthor">Author</label><br>
         <input type="text" id="bookAuthor" name="bookAuthor"><br>
         <label for="bookPages">Pages:</label><br>
-        <input type="number" name="bookPages"><br>
+        <input type="number" name="bookPages" id="bookPages" maxlength="4"><br>
         <input type="checkbox" id="readStatus" name="readStatus">
         <label for="readStatus">I have read this book</label>
     </form>
+    <button class="addBookBtn" id="addBookBtn">Add new Book</button>
     <ul id="bookListContain"></ul>
 </container>    
 </body>
