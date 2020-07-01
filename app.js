@@ -14,15 +14,17 @@ for (let i = 0; i < bookListItemDeleteBtn.length; i++) {
     bookListItemDeleteBtn[i].addEventListener('click', removeBook);
 }
 
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
 const book1 = new Book('Title', 'author', 'page numba', true);
 const book2 = new Book('Title2', 'author2', 'page numba2', false);
-
-function Book(title, author, pages, read) {
-this.title = title
-this.author = author
-this.pages = pages
-this.read = read
-}
 
 
 document.addEventListener('click', function(e){
@@ -41,7 +43,8 @@ var bookAuthor = bookAuthorForm.value;
 var bookPages = bookPagesForm.value;
 var bookRead = bookReadForm.checked;
 
-myLibrary.push(new Book(bookTitle, bookAuthor, bookPages, bookRead, bookID));
+
+myLibrary.push(new Book(bookTitle, bookAuthor, bookPages, bookRead));
 localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
 render(myLibrary);
 }
@@ -78,12 +81,12 @@ function render(arr) {
 
     var bookListItemPages = document.createElement('p');
     bookListItemPages.className = 'bookPages';
-    bookListItemPages.innerText = `${item.pages}`;
+    bookListItemPages.innerText = `Number of pages: ${item.pages}`;
     bookListItem.appendChild(bookListItemPages);
     
     var bookListItemRead = document.createElement('p');
     bookListItemRead.className = 'bookRead';
-    bookListItemRead.innerText = `${item.read}`;
+    bookListItemRead.innerText = `I have read this book: ${item.read}`;
     bookListItem.appendChild(bookListItemRead);
 
     var bookListItemCheckBox = document.createElement('input');
